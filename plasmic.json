@@ -7,7 +7,7 @@
   },
   "style": {
     "scheme": "css-modules",
-    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
   },
   "images": {
     "scheme": "files",
@@ -40,6 +40,19 @@
           "cssFilePath": "plasmic/blank_project/PlasmicHomepage.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "E1TVPzTuVx",
+          "name": "Header",
+          "type": "managed",
+          "projectId": "eUnZTWXfh7jvqYBMMqPhKk",
+          "renderModuleFilePath": "plasmic/blank_project/PlasmicHeader.tsx",
+          "importSpec": {
+            "modulePath": "Header.tsx"
+          },
+          "cssFilePath": "plasmic/blank_project/PlasmicHeader.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [],
@@ -48,6 +61,11 @@
           "id": "F13Y852oP",
           "name": "Header Logo.png",
           "filePath": "plasmic/blank_project/images/headerLogopng.png"
+        },
+        {
+          "id": "POkjxkjeZ",
+          "name": "Mask Group (1).png",
+          "filePath": "plasmic/blank_project/images/maskGroup1Png.png"
         }
       ],
       "indirect": false,

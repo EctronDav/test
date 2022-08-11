@@ -31,15 +31,14 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-
-import { useScreenVariants as useScreenVariantsbsJfjoIyQ8BYq } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: bsJFJOIyQ8bYQ/globalVariant
+import Header from "../../Header"; // plasmic-import: E1TVPzTuVx/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_blank_project.module.css"; // plasmic-import: eUnZTWXfh7jvqYBMMqPhKk/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: fENnDOLOgjm2/css
 
-import headerLogopngF13Y852OP from "./images/headerLogopng.png"; // plasmic-import: F13Y852oP/picture
+import maskGroup1PngPOkjxkjeZ from "./images/maskGroup1Png.png"; // plasmic-import: POkjxkjeZ/picture
 
 export type PlasmicHomepage__VariantMembers = {};
 
@@ -53,12 +52,12 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
-  header?: p.Flex<"div">;
-  columns?: p.Flex<"div">;
-  img?: p.Flex<typeof p.PlasmicImg>;
-  button?: p.Flex<"button">;
+  header?: p.Flex<typeof Header>;
   contentTitle?: p.Flex<"div">;
   list?: p.Flex<"div">;
+  card?: p.Flex<"div">;
+  img?: p.Flex<typeof p.PlasmicImg>;
+  frame200?: p.Flex<"div">;
 };
 
 export interface DefaultHomepageProps {
@@ -87,10 +86,6 @@ function PlasmicHomepage__RenderFunc(props: {
 
   const $props = args;
 
-  const globalVariants = ensureGlobalVariants({
-    screen: useScreenVariantsbsJfjoIyQ8BYq()
-  });
-
   return (
     <React.Fragment>
       {}
@@ -111,65 +106,11 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.root
           )}
         >
-          <div
+          <Header
             data-plasmic-name={"header"}
             data-plasmic-override={overrides.header}
-            className={classNames(projectcss.all, sty.header)}
-          >
-            <div
-              data-plasmic-name={"columns"}
-              data-plasmic-override={overrides.columns}
-              className={classNames(projectcss.all, sty.columns)}
-            >
-              <div className={classNames(projectcss.all, sty.column__df21A)}>
-                <p.PlasmicImg
-                  data-plasmic-name={"img"}
-                  data-plasmic-override={overrides.img}
-                  alt={""}
-                  className={classNames(sty.img)}
-                  displayHeight={"auto" as const}
-                  displayMaxHeight={"none" as const}
-                  displayMaxWidth={"100%" as const}
-                  displayMinHeight={"0" as const}
-                  displayMinWidth={"0" as const}
-                  displayWidth={
-                    hasVariant(globalVariants, "screen", "mobileOnly")
-                      ? ("100px" as const)
-                      : ("auto" as const)
-                  }
-                  loading={"lazy" as const}
-                  src={{
-                    src: headerLogopngF13Y852OP,
-                    fullWidth: 152,
-                    fullHeight: 71,
-                    aspectRatio: undefined
-                  }}
-                />
-              </div>
-
-              <div className={classNames(projectcss.all, sty.column__o5XRx)}>
-                <button
-                  data-plasmic-name={"button"}
-                  data-plasmic-override={overrides.button}
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.button,
-                    sty.button
-                  )}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__uAqoj
-                    )}
-                  >
-                    {"ANALYZE ASAs"}
-                  </div>
-                </button>
-              </div>
-            </div>
-          </div>
+            className={classNames("__wab_instance", sty.header)}
+          />
 
           <div
             data-plasmic-name={"contentTitle"}
@@ -191,7 +132,59 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-name={"list"}
             data-plasmic-override={overrides.list}
             className={classNames(projectcss.all, sty.list)}
-          />
+          >
+            <div
+              data-plasmic-name={"card"}
+              data-plasmic-override={overrides.card}
+              className={classNames(projectcss.all, sty.card)}
+            >
+              <p.PlasmicImg
+                data-plasmic-name={"img"}
+                data-plasmic-override={overrides.img}
+                alt={""}
+                className={classNames(sty.img)}
+                displayHeight={"auto" as const}
+                displayMaxHeight={"none" as const}
+                displayMaxWidth={"100%" as const}
+                displayMinHeight={"0" as const}
+                displayMinWidth={"0" as const}
+                displayWidth={"auto" as const}
+                loading={"lazy" as const}
+                src={{
+                  src: maskGroup1PngPOkjxkjeZ,
+                  fullWidth: 44,
+                  fullHeight: 45,
+                  aspectRatio: undefined
+                }}
+              />
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__k5FaU
+                )}
+              >
+                {"Alogrand"}
+              </div>
+
+              <div
+                data-plasmic-name={"frame200"}
+                data-plasmic-override={overrides.frame200}
+                className={classNames(projectcss.all, sty.frame200)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__bJibj
+                  )}
+                >
+                  {"Available"}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -199,25 +192,25 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "columns", "img", "button", "contentTitle", "list"],
-  header: ["header", "columns", "img", "button"],
-  columns: ["columns", "img", "button"],
-  img: ["img"],
-  button: ["button"],
+  root: ["root", "header", "contentTitle", "list", "card", "img", "frame200"],
+  header: ["header"],
   contentTitle: ["contentTitle"],
-  list: ["list"]
+  list: ["list", "card", "img", "frame200"],
+  card: ["card", "img", "frame200"],
+  img: ["img"],
+  frame200: ["frame200"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  header: "div";
-  columns: "div";
-  img: typeof p.PlasmicImg;
-  button: "button";
+  header: typeof Header;
   contentTitle: "div";
   list: "div";
+  card: "div";
+  img: typeof p.PlasmicImg;
+  frame200: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -282,11 +275,11 @@ export const PlasmicHomepage = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
-    columns: makeNodeComponent("columns"),
-    img: makeNodeComponent("img"),
-    button: makeNodeComponent("button"),
     contentTitle: makeNodeComponent("contentTitle"),
     list: makeNodeComponent("list"),
+    card: makeNodeComponent("card"),
+    img: makeNodeComponent("img"),
+    frame200: makeNodeComponent("frame200"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
